@@ -1,3 +1,24 @@
 test.github.io
 ==============
-Hello!!!!
+require "json"
+require "open-uri"
+
+url = "http://portal.starterleague.com/courses/46.json"
+data = open(url).read
+parsed_data = JSON.parse(data)
+
+# puts data
+puts parsed_data
+
+class Person
+   attr_accessor :firast_name
+   attr_accessor :last_name
+   attr_accessor :hometown
+
+   def introduce
+      puts "#{first_name} #{last_name} is from #{hometown}"
+      puts "****************************"
+      puts
+   end
+end
+
